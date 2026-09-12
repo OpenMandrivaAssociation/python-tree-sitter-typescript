@@ -6,6 +6,8 @@ License:	MIT
 Group:		Development/Python
 URL:		https://pypi.org/project/tree-sitter-typescript
 Source0:	https://files.pythonhosted.org/packages/1e/fc/bb52958f7e399250aee093751e9373a6311cadbe76b6e0d109b853757f35/tree_sitter_typescript-0.23.2.tar.gz
+# PyPI sdist omits src/tree_sitter/*.h
+Source1:	tree-sitter-c-headers.tar.xz
 BuildRequires:	python
 BuildRequires:	pkgconfig(python)
 BuildRequires:	python%{pyver}dist(pip)
@@ -19,6 +21,7 @@ Aider's grep-ast repo-map.
 
 %prep
 %autosetup -n tree_sitter_typescript-0.23.2
+tar -C typescript/src -xf %{SOURCE1}
 
 %build
 
