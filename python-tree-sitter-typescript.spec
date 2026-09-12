@@ -21,7 +21,7 @@ Aider's grep-ast repo-map.
 
 %prep
 %autosetup -n tree_sitter_typescript-0.23.2
-tar -C typescript/src -xf %{SOURCE1}
+tar -xf %{SOURCE1}
 
 %build
 
